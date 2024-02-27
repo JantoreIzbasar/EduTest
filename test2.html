@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка ответов в форме</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="quizForm">
+        <label for="q1">Вопрос 1: 2 + 2 = ?</label>
+        <input type="text" id="q1" name="q1" required>
+        <br>
+
+        <label for="q2">Вопрос 2: Сколько пальцев у человека?</label>
+        <input type="text" id="q2" name="q2" required>
+        <br>
+
+        <button type="button" onclick="checkAnswers()">Проверить ответы</button>
+    </form>
+
+    <div id="result" class="error"></div>
+
+    <script>
+        function checkAnswers() {
+            // Получаем значения ответов из формы
+            var answer1 = document.getElementById('q1').value;
+            var answer2 = document.getElementById('q2').value;
+
+            // Проверяем ответы (в данном случае, просто для примера)
+            if (answer1 === '4' && answer2 === '10') {
+                document.getElementById('result').innerHTML = 'Правильно!';
+                document.getElementById('result').className = '';
+            } else {
+                document.getElementById('result').innerHTML = 'Неправильные ответы. Попробуйте еще раз.';
+                document.getElementById('result').className = 'error';
+            }
+        }
+    </script>
+
+</body>
+</html>
