@@ -48,11 +48,12 @@
             var choice
             for(var v = 1; v <= 3 ; v++){
                 
-            }
+            
             var q = document.forms["#quiz"].elements["question" + v];
             for(var i = 1; i <= q.length; i++){
                 if (q[i].checked){
                     choice = q[i].value;
+                }
                 }
                 if (choice == "yes"){yes++}
                 if (choice == "no"){no++}
