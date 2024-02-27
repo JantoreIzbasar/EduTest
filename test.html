@@ -21,27 +21,41 @@
         <ul>
             <li><input type="radio" name="question1" value="yes" id="value1">4</li>
             <li><input type="radio" name="question1" value="no" id="value2">5</li>
-            <li><input type="radio" name="question1" value="no" id="value3">рыба</li>
+            <li><input type="radio" checked="checked" name="question1" value="no" id="value3">рыба</li>
         </ul>
         <h3>Жи Ши пиши...</h3>
         <ul>
             <li><input type="radio" name="question2" value="yes" id="value1">Через "И"</li>
             <li><input type="radio" name="question2" value="no" id="value2">От душы</li>
-            <li><input type="radio" name="question2" value="no" id="value3">Не знаю</li>
+            <li><input type="radio" checked="checked" name="question2" value="no" id="value3">Не знаю</li>
         </ul>
         <h3>Вы человек?</h3>
         <ul>
             <li><input type="radio" name="question3" value="yes" id="value1">Да</li>
             <li><input type="radio" name="question3" value="no" id="value2">Нет</li>
-            <li><input type="radio" name="question3" value="no" id="value3">Не знаю<br></li>
+            <li><input type="radio" checked="checked" name="question3" value="no" id="value3">Не знаю<br></li>
         </ul>
-        
+
+        <input type="submit" value="submit" id="submit">
     </form>
     <button id="button">Проверить</button>
     <script >
-        function check(){
+        function check() {
+           
             var yes = 0
-          
+            var no = 0
+            var result = ""
+            var choice
+            for(var v = 1; v <= 3 ; v++){
+                
+            }
+            var q = document.forms["#quiz"].elements["question" + v]
+            for(var i = 1; i <= q.length; i++){
+                if (q[i].checked){
+                    choice = q[i].value
+                }
+                if (choice == "yes"){yes++}
+                if (choice == "no"){no++}
             }
             alert(yes)
         }
